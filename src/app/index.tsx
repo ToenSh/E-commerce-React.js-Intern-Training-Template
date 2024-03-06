@@ -1,19 +1,19 @@
-import "./index.css"
+import { Categories } from '../components/Categories';
+import { Footer } from '../components/Footer';
+import { Header } from '../components/Header';
+import { Hero } from '../components/Hero';
+import { Newsletter } from '../components/Newsletter';
+
 const App = () => {
   return (
     <>
-      <h1>Intern Training Template</h1>
-      <div className="card">
-        <p>
-          Execute <code>npm run start-server</code> to launch the mock-up API
-          built with Node.js.
-        </p>
-      </div>
-      <p className="happy-coding">
-        Check out README for more info. Happy coding! 🎉
-      </p>
+      <Header />
+      <Hero />
+      <Categories />
+      <Newsletter />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
