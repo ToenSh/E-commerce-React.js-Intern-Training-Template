@@ -1,11 +1,10 @@
-import arrowRight from '../assets/arrow-right-solid.svg';
+import arrowRight from '../../../assets/arrow-right-solid.svg';
 interface CardProps {
   name: string;
   imgSrc: string;
 }
-export const Card = ({ name, imgSrc }: CardProps) => {
-  const formatedName =
-    name === 'allWeather' ? name.replace(/([A-Z])/g, ' $1') : name;
+const Card = ({ name, imgSrc }: CardProps) => {
+  const formatedName = name === 'allWeather' ? name.replace(/([A-Z])/g, ' $1') : name;
   return (
     <div className="max-w-[237px]">
       <img src={imgSrc} alt="boots" />
@@ -16,3 +15,4 @@ export const Card = ({ name, imgSrc }: CardProps) => {
     </div>
   );
 };
+export default Card;

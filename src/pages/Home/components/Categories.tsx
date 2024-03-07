@@ -1,6 +1,6 @@
-import { Card } from './Card';
+import Card from './CategoryCard';
 import { v4 as uuidv4 } from 'uuid';
-export const Categories = () => {
+const Categories = () => {
   const categories = {
     rain: 'src/assets/rainboot.png',
     snow: 'src/assets/snowboot.png',
@@ -15,12 +15,13 @@ export const Categories = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-20 max-w-6xl mx-auto pt-16 mb-16">
+    <div className="flex flex-col items-center gap-20 max-w-6xl mx-auto pt-16 mb-24">
       <h2 className="text-dark-green font-semibold text-[40px] text-center max-w-2xl tracking-wide">
-        Socially and Environmentally Progressive Outdoor Footwear That Helps You
-        #BeOutside
+        Socially and Environmentally Progressive Outdoor Footwear That Helps You #BeOutside
       </h2>
       <div className="flex items-center gap-3">{renderCategoryCards()}</div>
     </div>
   );
 };
+
+export default Categories;

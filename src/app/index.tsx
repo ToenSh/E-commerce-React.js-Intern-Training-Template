@@ -1,17 +1,9 @@
-import { Categories } from '../components/Categories';
-import { Footer } from '../components/Footer';
-import { Header } from '../components/Header';
-import { Hero } from '../components/Hero';
-import { Newsletter } from '../components/Newsletter';
+import AppRoutes from '../routes/Routes';
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Hero />
-      <Categories />
-      <Newsletter />
-      <Footer />
+      <AppRoutes />
     </>
   );
 };

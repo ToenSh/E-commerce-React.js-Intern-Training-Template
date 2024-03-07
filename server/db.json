@@ -30,6 +30,19 @@
       "id": 4
     }
   ],
+  "categories": {
+    "id": 1,
+    "name": "Rain",
+    "products": [
+      {
+        "id": 1001,
+        "name": "Anyday Rain Boot In Black",
+        "description": "Combining cloud-like comfort and waterproof protection, the Anyday Rain Boots keep you dry all day long. Carefully hand-made in Portugal from recycled nylon and a recycled rubber sole, so you can step confidently through any day.",
+        "price": 254,
+        "images": ""
+      }
+    ]
+  },
   "products": [
     {
       "id": 18,
