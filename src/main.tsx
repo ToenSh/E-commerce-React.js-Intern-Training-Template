@@ -15,11 +15,11 @@ initApp().then((user) => {
     const store = makeStore({ user: { value: user } });
     root.render(
       <React.StrictMode>
-        <BrowserRouter>
-          <Provider store={store}>
+        <Provider store={store}>
+          <BrowserRouter>
             <App />
-          </Provider>
-        </BrowserRouter>
+          </BrowserRouter>
+        </Provider>
       </React.StrictMode>
     );
   } else {

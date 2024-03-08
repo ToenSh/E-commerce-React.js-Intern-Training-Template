@@ -12,25 +12,17 @@ const Header = () => {
           </Link>
           <nav>
             <ul className="flex items-center gap-5">
-              <Link to={'/rain'}>
-                <li className="opacity-75 hover:underline hover:cursor-pointer hover:opacity-100">
-                  Rain
-                </li>
+              <Link to={'/1'}>
+                <li className="opacity-75 hover:underline hover:cursor-pointer hover:opacity-100">Rain</li>
               </Link>
-              <Link to={'/snow'}>
-                <li className="opacity-75 hover:underline hover:cursor-pointer hover:opacity-100">
-                  Snow
-                </li>
+              <Link to={'/2'}>
+                <li className="opacity-75 hover:underline hover:cursor-pointer hover:opacity-100">Snow</li>
               </Link>
-              <Link to={'/sun'}>
-                <li className="opacity-75 hover:underline hover:cursor-pointer hover:opacity-100">
-                  Sun
-                </li>
+              <Link to={'/3'}>
+                <li className="opacity-75 hover:underline hover:cursor-pointer hover:opacity-100">Sun</li>
               </Link>
-              <Link to={'/all-weather'}>
-                <li className="opacity-75 hover:underline hover:cursor-pointer hover:opacity-100">
-                  All Weather
-                </li>
+              <Link to={'/allProducts'}>
+                <li className="opacity-75 hover:underline hover:cursor-pointer hover:opacity-100">All Weather</li>
               </Link>
             </ul>
           </nav>

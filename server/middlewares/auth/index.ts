@@ -126,6 +126,12 @@ const update = (req, res, next) => {
 
 const loggedOnly = (req, res, next) => {
   const { authorization } = req.headers
+
+  if (req.originalUrl.startsWith('/categories')) {
+    next(); 
+    return;
+  }
+  
   if (!authorization) {
     res.status(401).jsonp("Missing authorization header")
     return
@@ -139,6 +145,7 @@ const loggedOnly = (req, res, next) => {
     res.status(401).jsonp("Missing token")
     return
   }
+  
   try {
     jwt.verify(token, JWT_SECRET_KEY)
     req.claims = jwt.decode(token)

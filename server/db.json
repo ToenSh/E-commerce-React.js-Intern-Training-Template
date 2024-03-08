@@ -33,82 +33,136 @@
   "categories": [
     {
       "id": 1,
-      "name": "Rain",
+      "name": "rain",
       "products": [
         {
           "id": 1001,
+          "categoryID": 1,
           "name": "Anyday Rain Boot In Black",
           "description": "Combining cloud-like comfort and waterproof protection, the Anyday Rain Boots keep you dry all day long. Carefully hand-made in Portugal from recycled nylon and a recycled rubber sole, so you can step confidently through any day.",
           "price": 253,
-          "images": ""
+          "images": [
+            "/src/assets/rainboots/black/sustainable-rainboot.webp",
+            "/src/assets/rainboots/black/minimalist-rainboot.webp",
+            "/src/assets/rainboots/black/rainboot-2.webp",
+            "/src/assets/rainboots/black/ethical-rainboot.webp",
+            "/src/assets/rainboots/black/city-essential-rainboot.webp",
+            "/src/assets/rainboots/black/sustainable-details-rainboot.webp"
+          ]
         },
         {
           "id": 1002,
+          "categoryID": 1,
           "name": "Anyday Rain Boot In Sage",
           "description": "Combining cloud-like comfort and waterproof protection, the Anyday Rain Boots keep you dry all day long. Carefully hand-made in Portugal from recycled nylon and a recycled rubber sole, so you can step confidently through any day.",
           "price": 253,
-          "images": ""
+          "images": [
+            "/src/assets/rainboots/sage/green-rainboot.webp",
+            "/src/assets/rainboots/sage/sustainable-green-rainboot.webp",
+            "/src/assets/rainboots/sage/ethical-green-rainboot.webp"
+          ]
         }
       ]
     },
     {
       "id": 2,
-      "name": "Snow",
+      "name": "snow",
       "products": [
         {
           "id": 1003,
+          "categoryID": 2,
           "name": "The Modern Winter Boot in Beige",
           "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
           "price": 293,
-          "images": ""
+          "images": [
+            "/src/assets/winterboots/beige/WinterBeige.webp",
+            "/src/assets/winterboots/beige/WinterBeigeside.webp",
+            "/src/assets/winterboots/beige/BeigeSquareLifestyleProductPage.webp"
+          ]
         },
         {
           "id": 1004,
+          "categoryID": 2,
           "name": "The Modern Winter Boot in Black",
           "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
           "price": 293,
-          "images": ""
+          "images": [
+            "/src/assets/winterboots/black/WinterBlack.webp",
+            "/src/assets/winterboots/black/WinterBlackSide.webp",
+            "/src/assets/winterboots/black/WinterBlacktop.webp",
+            "/src/assets/winterboots/black/BlackSquareLifestyleProductPage.webp"
+          ]
         },
         {
           "id": 1005,
+          "categoryID": 2,
           "name": "The Weekend Boot Z in Black",
           "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
           "price": 235,
-          "images": ""
+          "images": [
+            "/src/assets/winterboots/beige-sole/winter-boots-city-black.webp",
+            "/src/assets/winterboots/beige-sole/winter-hiking-boots-thesus.webp",
+            "/src/assets/winterboots/beige-sole/boots-winter-city-walking.webp",
+            "/src/assets/winterboots/beige-sole/2021_Footwear_Walking_Boots_Women.webp"
+          ]
         },
         {
           "id": 1006,
+          "categoryID": 2,
           "name": "The Weekend Boot Z in Grey",
           "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
           "price": 235,
-          "images": ""
+          "images": [
+            "/src/assets/winterboots/grey/city-walking-winter-boot_grey.webp",
+            "/src/assets/winterboots/grey/sustainable-winter-boots_grey.webp",
+            "/src/assets/winterboots/grey/sustainable-winter-boots.webp",
+            "/src/assets/winterboots/grey/winter-sustainable-boots.webp"
+          ]
         }
       ]
     },
     {
       "id": 3,
-      "name": "Sun",
+      "name": "sun",
       "products": [
         {
           "id": 1007,
+          "categoryID": 3,
           "name": "The Terrus in Sage",
           "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
           "price": 155,
-          "images": ""
+          "images": [
+            "/src/assets/sunboots/sage/sage-green-sustainable-clog.webp",
+            "/src/assets/sunboots/sage/comfy-walking-clogs.webp",
+            "/src/assets/sunboots/sage/stylish-clogs.webp",
+            "/src/assets/sunboots/sage/stylish-comfy-clogs.webp",
+            "/src/assets/sunboots/sage/sustainable-clog-green.webp"
+          ]
         },
         {
           "id": 1008,
+          "categoryID": 3,
           "name": "The Terrus in Allegra",
           "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
           "price": 155,
-          "images": ""
+          "images": [
+            "/src/assets/sunboots/allegra/ethical-sustainable-clogs.webp",
+            "/src/assets/sunboots/allegra/natural-clogs.webp",
+            "/src/assets/sunboots/allegra/sustainable-clogs-white.webp",
+            "/src/assets/sunboots/allegra/sustainable-clogs.webp"
+          ]
         },
         {
           "id": 1009,
+          "categoryID": 3,
           "name": "The Terrus in Beige",
           "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
           "price": 155,
-          "images": ""
+          "images": [
+            "/src/assets/sunboots/beige/sustainable-clog-beige.webp",
+            "/src/assets/sunboots/beige/hiking-clogs-beige.webp",
+            "/src/assets/sunboots/beige/walking-clogs-beige.webp"
+          ]
         }
       ]
     }

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   return (
     <section className="bg-[url('src/assets/hero-background.png')] bg-no-repeat bg-center bg-cover min-w-screen h-[45rem] flex flex-col items-center justify-center">
@@ -5,7 +7,9 @@ const Hero = () => {
         <span className="text-2xl tracking-[0.06rem] opacity-70 font-normal ">Our Best Selling Weekend Boots</span>
         From Winter to Spring
       </h1>
-      <button className="bg-white mt-8 px-8 py-3 rounded hover:scale-105">Shop All</button>
+      <Link to={'/allProducts'} className="bg-white mt-8 px-8 py-3 rounded hover:scale-105">
+        Shop All
+      </Link>
     </section>
   );
 };
