@@ -31,9 +31,9 @@ const Header = () => {
           <Link to={'/login'} className="hover:scale-110">
             <img src={userLogo} alt="login" className="w-5" />
           </Link>
-          <button className="hover:scale-110">
+          <Link to={'/cart'} className="hover:scale-110">
             <img src={cartLogo} alt="cart" className="w-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </header>

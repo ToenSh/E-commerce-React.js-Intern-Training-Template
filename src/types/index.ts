@@ -18,5 +18,5 @@ export type TProduct = {
   name: string,
   description: string,
   price: number,
-  images: string[]
+  images: string | string[]
 }

@@ -7,6 +7,7 @@ import Newsletter from '../components/Newsletter';
 import Product from '../pages/Product/Product';
 import Login from '@/features/auth/pages/Login';
 import Register from '@/features/auth/pages/Register';
+import Cart from '@/features/cart/pages/Cart';
 const AppRoutes = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const AppRoutes = () => {
           <Route path="/:categoryID/:product" element={<Product />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Newsletter />
       </main>
