@@ -10,6 +10,7 @@ import Register from '@/features/auth/pages/Register';
 import Cart from '@/features/cart/pages/Cart';
 import UserProfile from '@/features/user/pages/UserProfile';
 import ChangePassword from '@/features/auth/pages/ChangePassword';
+import Checkout from '@/features/checkout/pages/Checkout';
 const AppRoutes = () => {
   return (
     <>
@@ -24,6 +25,7 @@ const AppRoutes = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/changePassword" element={<ChangePassword />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Newsletter />
       </main>

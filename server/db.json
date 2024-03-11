@@ -28,6 +28,13 @@
       "firstname": "Rei",
       "lastname": "Musabelli",
       "id": 4
+    },
+    {
+      "firstName": "toni",
+      "lastName": "sh",
+      "email": "asda@gmail.com",
+      "password": "$2a$10$po.AVBv7SprbDF2gxSSaQOZIat2fhGlQgG.WbLGHLYWvRQP8gehmW",
+      "id": 5
     }
   ],
   "categories": [
@@ -196,6 +203,22 @@
       "name": "Euro Account",
       "balance": 500,
       "userId": 1,
+      "isActive": true,
+      "dateCreated": "2022-04-14T11:07:37.8915424"
+    },
+    {
+      "id": 2,
+      "name": "Euro Account",
+      "balance": 500,
+      "userId": 5,
+      "isActive": true,
+      "dateCreated": "2022-04-14T11:07:37.8915424"
+    },
+    {
+      "id": 3,
+      "name": "Euro Account",
+      "balance": 500,
+      "userId": 5,
       "isActive": true,
       "dateCreated": "2022-04-14T11:07:37.8915424"
     }
