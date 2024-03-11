@@ -31,14 +31,14 @@ const ProductCard = ({
   };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 group">
       <Link to={`/${categoryID}/${productID}`}>
         <img src={image} alt="snowboot" className="max-w-[305px]" />
       </Link>
       <div className="flex flex-col items-start gap-2">
         <Link
           to={`/${categoryID}/${productID}`}
-          className="text-sm font-semibold hover:underline"
+          className="font-semibold group-hover:underline"
         >
           {name}{' '}
         </Link>

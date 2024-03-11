@@ -4,7 +4,9 @@ import cartLogo from '../assets/shopping-bag.png';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '@/app/hooks';
 import { selectCartItems } from '@/features/cart/slice/cartSlice';
+import useGetUser from '@/hooks/useGetUser';
 const Header = () => {
+  const user = useGetUser();
   const productsOnCart = useAppSelector(selectCartItems);
   const totalQuantity = productsOnCart.reduce((acc, curr) => {
     return acc + curr.quantity;
@@ -43,7 +45,7 @@ const Header = () => {
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <Link to={'/login'} className="hover:scale-110">
+          <Link to={user ? '/profile' : '/login'} className="hover:scale-110">
             <img src={userLogo} alt="login" className="w-5" />
           </Link>
           <Link to={'/cart'} className={`hover:scale-110 relative `}>

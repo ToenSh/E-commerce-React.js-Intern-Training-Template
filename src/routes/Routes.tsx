@@ -1,13 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from '../pages/Home/Home';
+import Home from '../features/dashboard/Home/Home';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Category from '../pages/Category/Category';
+import Category from '../features/dashboard/Category/Category';
 import Newsletter from '../components/Newsletter';
-import Product from '../pages/Product/Product';
+import Product from '../features/dashboard/Product/Product';
 import Login from '@/features/auth/pages/Login';
 import Register from '@/features/auth/pages/Register';
 import Cart from '@/features/cart/pages/Cart';
+import UserProfile from '@/features/user/pages/UserProfile';
+import ChangePassword from '@/features/auth/pages/ChangePassword';
 const AppRoutes = () => {
   return (
     <>
@@ -20,6 +22,8 @@ const AppRoutes = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/changePassword" element={<ChangePassword />} />
         </Routes>
         <Newsletter />
       </main>

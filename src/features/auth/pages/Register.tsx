@@ -1,7 +1,23 @@
+import { useAppDispatch } from '@/app/hooks';
 import { useForm } from 'react-hook-form';
+import { signup } from '../stores/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const { register } = useForm();
+  const navigate = useNavigate();
+  const { register, watch } = useForm();
+  const firstName = watch('firstName');
+  const lastName = watch('lastName');
+  const email = watch('email');
+  const password = watch('password');
+
+  const dispatch = useAppDispatch();
+
+  const createAccount = () => {
+    dispatch(signup({ firstName, lastName, email, password }));
+    navigate('/');
+  };
+
   return (
     <div className="text-dark-green max-w-7xl mx-auto flex flex-col items-center py-12">
       <h1 className="font-semibold text-[40px] mb-12">Create account</h1>
@@ -42,7 +58,10 @@ const Register = () => {
             placeholder="Password"
           />
         </label>
-        <button className="bg-dark-green text-white font-medium w-28 py-2 mt-4 rounded hover:opacity-75">
+        <button
+          className="bg-dark-green text-white font-medium w-28 py-2 mt-4 rounded hover:opacity-75"
+          onClick={createAccount}
+        >
           Create
         </button>
       </form>
