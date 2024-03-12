@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Cart } from '@/features/cart';
 import { AuthRoutes } from '@/features/auth';
 import { DashboardRoutes } from '@/features/dashboard';
@@ -16,6 +16,7 @@ const AppRoutes = () => {
       <Header />
       <main>
         <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/*" element={<DashboardRoutes />} />
           <Route path="/auth/*" element={<AuthRoutes />} />
           <Route path="/cart" element={<Cart />} />
