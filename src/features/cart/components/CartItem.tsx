@@ -1,20 +1,8 @@
 import { Link } from 'react-router-dom';
-import trashIcon from '../../../../assets/icons/cart/trash-can-regular.svg';
-import {
-  TCartItem,
-  decreaseQuantity,
-  deleteProduct,
-  increaseQuantity,
-} from '../../slice/cartSlice';
+import trashIcon from '../assets/trash-can-regular.svg';
+import { TCartItem, decreaseQuantity, deleteProduct, increaseQuantity } from '../slice/cartSlice';
 import { useAppDispatch } from '@/app/hooks';
-const CartItem = ({
-  id,
-  categoryID,
-  name,
-  price,
-  quantity,
-  image,
-}: TCartItem) => {
+const CartItem = ({ id, categoryID, name, price, quantity, image }: TCartItem) => {
   const dispatch = useAppDispatch();
   const handleDeleteProduct = () => {
     dispatch(deleteProduct(name));
@@ -33,15 +21,10 @@ const CartItem = ({
       <div className="flex gap-8">
         <img src={image} alt="item-img" className="max-w-[121px]" />
         <div>
-          <Link
-            to={`/${categoryID}/${id}`}
-            className="text-[17px] font-bold cursor-pointer hover:underline"
-          >
+          <Link to={`/${categoryID}/${id}`} className="text-[17px] font-bold cursor-pointer hover:underline">
             {name}
           </Link>
-          <div className="text-[15px] opacity-80 mt-1">
-            USD {price.toFixed(2)}
-          </div>
+          <div className="text-[15px] opacity-80 mt-1">USD {price.toFixed(2)}</div>
         </div>
       </div>
       <div className="flex items-center gap-8">
@@ -49,9 +32,7 @@ const CartItem = ({
           <button className="basis-1/3 py-2" onClick={handleDecreaseQuantity}>
             -
           </button>
-          <span className="basis-1/3 text-center flex items-center justify-center">
-            {quantity}
-          </span>
+          <span className="basis-1/3 text-center flex items-center justify-center">{quantity}</span>
           <button className="basis-1/3" onClick={handleIncreaseQuantity}>
             +
           </button>
@@ -60,9 +41,7 @@ const CartItem = ({
           <img src={trashIcon} alt="delete" className="w-3" />
         </button>
       </div>
-      <div className="justify-self-end self-center">
-        {totalPrice.toFixed(2)} USD
-      </div>
+      <div className="justify-self-end self-center">{totalPrice.toFixed(2)} USD</div>
     </div>
   );
 };

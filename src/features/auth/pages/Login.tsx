@@ -12,8 +12,12 @@ const Login = () => {
   const dispatch = useAppDispatch();
 
   const signin = () => {
-    dispatch(login({ email, password }));
-    navigate('/');
+    if (email && password) {
+      dispatch(login({ email, password }));
+      navigate('/profile');
+    } else {
+      console.log('email and password required');
+    }
   };
 
   return (
@@ -27,6 +31,7 @@ const Login = () => {
             {...register('email')}
             className="w-[440px] py-3 border border-gray-600 pl-4 focus:border-2 focus:border-black focus:outline-none focus:ring-0"
             placeholder="Email"
+            required
           />
         </label>
         <label>
@@ -35,19 +40,15 @@ const Login = () => {
             id="password"
             {...register('password')}
             placeholder="Password"
+            required
+            minLength={8}
             className="w-[440px] py-3 border border-gray-600 pl-4 focus:border-2 focus:border-black focus:outline-none focus:ring-0"
           />
         </label>
-        <button
-          className="bg-dark-green text-white font-medium w-28 self-center py-2 rounded hover:opacity-75"
-          onClick={signin}
-        >
+        <button className="bg-dark-green text-white font-medium w-28 self-center py-2 rounded hover:opacity-75" onClick={signin}>
           Sign in
         </button>
-        <Link
-          className="self-center underline opacity-75 hover:opacity-100 hover:font-medium text-[15px] tracking-wide"
-          to={'/register'}
-        >
+        <Link className="self-center underline opacity-75 hover:opacity-100 hover:font-medium text-[15px] tracking-wide" to={'/auth/register'}>
           Create account
         </Link>
       </form>

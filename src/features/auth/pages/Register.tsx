@@ -15,7 +15,7 @@ const Register = () => {
 
   const createAccount = () => {
     dispatch(signup({ firstName, lastName, email, password }));
-    navigate('/');
+    navigate('/profile');
   };
 
   return (
@@ -58,10 +58,7 @@ const Register = () => {
             placeholder="Password"
           />
         </label>
-        <button
-          className="bg-dark-green text-white font-medium w-28 py-2 mt-4 rounded hover:opacity-75"
-          onClick={createAccount}
-        >
+        <button className="bg-dark-green text-white font-medium w-28 py-2 mt-4 rounded hover:opacity-75" onClick={createAccount}>
           Create
         </button>
       </form>

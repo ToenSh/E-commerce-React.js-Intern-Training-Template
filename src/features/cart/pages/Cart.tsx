@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import CartItem from './components/CartItem';
+import CartItem from '../components/CartItem';
 import { useAppSelector } from '@/app/hooks';
 import { selectCartItems } from '../slice/cartSlice';
 
@@ -28,19 +28,13 @@ const Cart = () => {
   return cartItems.length === 0 ? (
     <div className="flex max-w-7xl mx-auto flex-col items-center text-dark-green py-16 gap-6">
       <h1 className="font-semibold text-[40px]">Your cart is empty </h1>
-      <Link
-        to="/allProducts"
-        className="bg-dark-green text-white rounded px-8 py-3 hover:opacity-75 text-[15px]"
-      >
+      <Link to="/allProducts" className="bg-dark-green text-white rounded px-8 py-3 hover:opacity-75 text-[15px]">
         Continue shopping
       </Link>
       <div className="flex flex-col gap-2 mt-6">
         <h2 className="text-2xl font-semibold">Have an account?</h2>
         <div className="flex gap-1 opacity-80">
-          <Link
-            to="/login"
-            className="underline opacity-100 cursor-pointer font-medium"
-          >
+          <Link to="/auth/login" className="underline opacity-100 cursor-pointer font-medium">
             Log in
           </Link>
           to check out faster.
@@ -66,16 +60,12 @@ const Cart = () => {
       <div className="self-end mt-10 flex flex-col gap-4">
         <div className="flex gap-8 self-end">
           <span className="font-bold text-lg">Subtotal</span>
-          <span className="text-lg tracking-wider">
-            {subtotal.toFixed(2)} USD
-          </span>
+          <span className="text-lg tracking-wider">{subtotal.toFixed(2)} USD</span>
         </div>
-        <div className="text-sm opacity-80 self-end">
-          Taxes and shipping calculated at checkout
-        </div>
-        <button className="bg-dark-green text-white rounded font-semibold py-3 w-80 hover:opacity-80">
+        <div className="text-sm opacity-80 self-end">Taxes and shipping calculated at checkout</div>
+        <Link to={'/checkout'} className="bg-dark-green text-white rounded font-semibold py-3 w-80 hover:opacity-80 text-center">
           Check out
-        </button>
+        </Link>
       </div>
     </section>
   );

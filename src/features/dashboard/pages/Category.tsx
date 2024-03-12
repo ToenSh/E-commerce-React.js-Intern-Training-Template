@@ -1,9 +1,6 @@
 import { useParams } from 'react-router-dom';
-import ProductCard from './components/ProductCard';
-import {
-  useGetOneCategoryQuery,
-  useGetCategoriesQuery,
-} from '@/features/api/apiSlice';
+import ProductCard from '../components/ProductCard';
+import { useGetOneCategoryQuery, useGetCategoriesQuery } from '@/features/dashboard/api/apiSlice';
 const Category = () => {
   const { categoryID } = useParams();
 
@@ -36,12 +33,8 @@ const Category = () => {
   };
   return (
     <section className="max-w-7xl mx-auto text-dark-green flex flex-col gap-16 pt-8">
-      <h1 className="font-semibold text-[40px] capitalize">
-        {categoryID === 'allProducts' ? 'All Products' : category?.name}
-      </h1>
-      <div className="grid grid-cols-4 gap-y-8 gap-x-3 mb-16">
-        {renderProductCards()}
-      </div>
+      <h1 className="font-semibold text-[40px] capitalize">{categoryID === 'allProducts' ? 'All Products' : category?.name}</h1>
+      <div className="grid grid-cols-4 gap-y-8 gap-x-3 mb-16">{renderProductCards()}</div>
     </section>
   );
 };
