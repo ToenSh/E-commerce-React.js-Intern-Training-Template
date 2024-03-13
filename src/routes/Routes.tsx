@@ -10,12 +10,15 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Newsletter from '../components/Newsletter';
 import PrivateRoutes from '@/utils/PrivateRoutes';
+import { Toaster } from '@/components/ui/toaster';
+import ScrollToTop from '@/utils/ScrollToTop';
 
 const AppRoutes = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="relative">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/*" element={<DashboardRoutes />} />
@@ -29,6 +32,7 @@ const AppRoutes = () => {
           </Route>
         </Routes>
         <Newsletter />
+        <Toaster />
       </main>
       <Footer />
     </>

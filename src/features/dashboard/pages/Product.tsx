@@ -3,7 +3,9 @@ import ProductDetails from '../components/ProductDetails';
 import { useGetOneCategoryQuery } from '@/features/dashboard/slice/dashboardApiSlice';
 import { useParams } from 'react-router-dom';
 import { addProduct } from '@/features/cart/slice/cartSlice';
+import { useToast } from '@/components/ui/use-toast';
 const Product = () => {
+  const { toast } = useToast();
   const { categoryID, product: productID } = useParams();
   const { data: category } = useGetOneCategoryQuery(categoryID);
   const dispatch = useAppDispatch();
@@ -28,6 +30,9 @@ const Product = () => {
           quantity: 1,
         })
       );
+      toast({
+        title: 'Item added to cart',
+      });
     }
   };
 

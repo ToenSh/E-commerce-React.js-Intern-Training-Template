@@ -1,6 +1,8 @@
 import { useAppDispatch } from '@/app/hooks';
 import { addProduct } from '@/features/cart/slice/cartSlice';
 import { Link } from 'react-router-dom';
+import { useToast } from '@/components/ui/use-toast';
+
 interface ProductCardProps {
   name: string;
   categoryID: number;
@@ -8,13 +10,8 @@ interface ProductCardProps {
   image: string;
   productID: number;
 }
-const ProductCard = ({
-  name,
-  price,
-  image,
-  productID,
-  categoryID,
-}: ProductCardProps) => {
+const ProductCard = ({ name, price, image, productID, categoryID }: ProductCardProps) => {
+  const { toast } = useToast();
   const dispatch = useAppDispatch();
 
   const addToCart = () => {
@@ -28,6 +25,9 @@ const ProductCard = ({
         quantity: 1,
       })
     );
+    toast({
+      title: 'Item added to cart',
+    });
   };
 
   return (
@@ -36,17 +36,11 @@ const ProductCard = ({
         <img src={image} alt="snowboot" className="max-w-[305px]" />
       </Link>
       <div className="flex flex-col items-start gap-2">
-        <Link
-          to={`/${categoryID}/${productID}`}
-          className="font-semibold group-hover:underline"
-        >
+        <Link to={`/${categoryID}/${productID}`} className="font-semibold group-hover:underline">
           {name}{' '}
         </Link>
         <div>{price.toFixed(2)} USD</div>
-        <button
-          className="bg-dark-green text-white rounded-[20px] w-[97.5%] self-center py-2 mt-2 hover:opacity-70"
-          onClick={addToCart}
-        >
+        <button className="bg-dark-green text-white rounded-[20px] w-[97.5%] self-center py-2 mt-2 hover:opacity-70" onClick={addToCart}>
           Add to Cart
         </button>
       </div>

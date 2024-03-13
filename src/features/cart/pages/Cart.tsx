@@ -33,7 +33,7 @@ const Cart = () => {
       <div className="flex flex-col gap-2 mt-6">
         <h2 className="text-2xl font-semibold">Have an account?</h2>
         <div className="flex gap-1 opacity-80">
-          <Link to="/auth/login" className="underline opacity-100 cursor-pointer font-medium">
+          <Link to="/auth/login" className="underline opacity-90 hover:opacity-100 cursor-pointer font-medium">
             Log in
           </Link>
           to check out faster.
@@ -44,7 +44,7 @@ const Cart = () => {
     <section className="max-w-7xl mx-auto text-dark-green py-16 flex flex-col">
       <div className="flex items-center justify-between">
         <h1 className="font-semibold text-[40px]">Your cart</h1>
-        <Link to={'/allProducts'} className="underline">
+        <Link to={'/allProducts'} className="underline opacity-85 hover:opacity-100 font-medium">
           Continue Shopping
         </Link>
       </div>
