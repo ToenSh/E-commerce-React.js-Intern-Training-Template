@@ -12,14 +12,10 @@ const ChangePassword = () => {
   const newPassword = watch('newPassword');
   const newPasswordConfirm = watch('newPasswordConfirm');
 
-  const updatePassword = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const updatePassword = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (newPassword === newPasswordConfirm && user?.id) {
-      dispatch(
-        changePassword({ userID: user.id, password: newPasswordConfirm })
-      );
+      dispatch(changePassword({ userID: user.id, password: newPasswordConfirm }));
       navigate('/profile');
     } else {
       console.log('passwords do not match');
@@ -37,6 +33,8 @@ const ChangePassword = () => {
             {...register('newPassword')}
             className="w-[440px] py-3 border border-gray-600 pl-4 focus:border-2 focus:border-black focus:outline-none focus:ring-0"
             placeholder="New Password"
+            required
+            minLength={8}
           />
         </label>
         <label>
@@ -45,19 +43,15 @@ const ChangePassword = () => {
             id="newPasswordConfirm"
             {...register('newPasswordConfirm')}
             placeholder="Confirm new password"
+            required
+            minLength={8}
             className="w-[440px] py-3 border border-gray-600 pl-4 focus:border-2 focus:border-black focus:outline-none focus:ring-0"
           />
         </label>
-        <button
-          className="bg-dark-green text-white font-medium w-28 self-center py-2 rounded hover:opacity-75"
-          onClick={(e) => updatePassword(e)}
-        >
+        <button className="bg-dark-green text-white font-medium w-28 self-center py-2 rounded hover:opacity-75" onClick={(e) => updatePassword(e)}>
           Update
         </button>
-        <Link
-          className="self-center underline opacity-75 hover:opacity-100 hover:font-medium text-[15px] tracking-wide"
-          to={'/profile'}
-        >
+        <Link className="self-center underline opacity-75 hover:opacity-100 hover:font-medium text-[15px] tracking-wide" to={'/profile'}>
           Go back
         </Link>
       </form>

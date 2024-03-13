@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import trashIcon from '../assets/trash-can-regular.svg';
 import { TCartItem, decreaseQuantity, deleteProduct, increaseQuantity } from '../slice/cartSlice';
 import { useAppDispatch } from '@/app/hooks';
+
 const CartItem = ({ id, categoryID, name, price, quantity, image }: TCartItem) => {
   const dispatch = useAppDispatch();
   const handleDeleteProduct = () => {

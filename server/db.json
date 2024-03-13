@@ -195,6 +195,13 @@
       "description": "Blerje 2",
       "dateCreated": "2022-04-14T11:38:59.4989674",
       "id": 3
+    },
+    {
+      "bankAccountId": 3,
+      "amount": 100,
+      "description": "Blerje 2",
+      "dateCreated": "2022-04-14T11:38:59.4989674",
+      "id": 3
     }
   ],
   "bankAccounts": [
@@ -207,7 +214,7 @@
       "dateCreated": "2022-04-14T11:07:37.8915424"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "Euro Account",
       "balance": 500,
       "userId": 5,
@@ -215,12 +222,12 @@
       "dateCreated": "2022-04-14T11:07:37.8915424"
     },
     {
-      "id": 3,
-      "name": "Euro Account",
-      "balance": 500,
-      "userId": 5,
+      "name": "Savings Account",
+      "balance": 1000,
+      "userId": 456,
       "isActive": true,
-      "dateCreated": "2022-04-14T11:07:37.8915424"
+      "dateCreated": "2023-07-01",
+      "id": 4
     }
   ]
 }

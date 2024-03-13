@@ -2,7 +2,7 @@ import type { Action, ThunkAction } from '@reduxjs/toolkit';
 import { combineSlices, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { userSlice } from '../features/auth/stores/userSlice';
-import { apiSlice } from '@/features/dashboard/api/apiSlice';
+import { apiSlice } from '@/api/apiSlice';
 import { cartSlice } from '@/features/cart/slice/cartSlice';
 
 // `combineSlices` automatically combines the reducers using

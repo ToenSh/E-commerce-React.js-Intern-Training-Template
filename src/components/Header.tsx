@@ -2,12 +2,11 @@ import logo from '../assets/THESUS-LOGO1.avif';
 import userLogo from '../assets/user.png';
 import cartLogo from '../assets/shopping-bag.png';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '@/app/hooks';
-import { selectCartItems } from '@/features/cart/slice/cartSlice';
 import useGetUser from '@/hooks/useGetUser';
+import useGetCart from '@/hooks/useGetCart';
 const Header = () => {
   const user = useGetUser();
-  const productsOnCart = useAppSelector(selectCartItems);
+  const productsOnCart = useGetCart();
   const totalQuantity = productsOnCart.reduce((acc, curr) => {
     return acc + curr.quantity;
   }, 0);

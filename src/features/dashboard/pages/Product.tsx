@@ -1,6 +1,6 @@
 import { useAppDispatch } from '@/app/hooks';
 import ProductDetails from '../components/ProductDetails';
-import { useGetOneCategoryQuery } from '@/features/dashboard/api/apiSlice';
+import { useGetOneCategoryQuery } from '@/features/dashboard/slice/dashboardApiSlice';
 import { useParams } from 'react-router-dom';
 import { addProduct } from '@/features/cart/slice/cartSlice';
 const Product = () => {

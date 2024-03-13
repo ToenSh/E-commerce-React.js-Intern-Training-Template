@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { useGetCategoriesQuery } from '@/features/dashboard/api/apiSlice';
+import { useGetCategoriesQuery } from '@/features/dashboard/slice/dashboardApiSlice';
 import CategoryCard from './CategoryCard';
 const Categories = () => {
   const { data: categories } = useGetCategoriesQuery();

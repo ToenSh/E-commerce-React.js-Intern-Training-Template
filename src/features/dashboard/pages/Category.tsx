@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import { useGetOneCategoryQuery, useGetCategoriesQuery } from '@/features/dashboard/api/apiSlice';
+import { useGetOneCategoryQuery, useGetCategoriesQuery } from '@/features/dashboard/slice/dashboardApiSlice';
 const Category = () => {
   const { categoryID } = useParams();
 
