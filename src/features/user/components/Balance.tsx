@@ -2,8 +2,12 @@ import { useGetBankAccountsQuery } from '@/features/BankAccounts';
 import bankIcon from '../assets/bank-icon.svg';
 import Account from './Account';
 import { Link } from 'react-router-dom';
+import useGetUser from '@/hooks/useGetUser';
+
 const Balance = () => {
-  const { data: bankAccounts } = useGetBankAccountsQuery('5');
+  const user = useGetUser();
+  console.log(user);
+  const { data: bankAccounts } = useGetBankAccountsQuery(user?.id?.toString());
 
   const renderBankAccounts = () => {
     return bankAccounts?.map((bankAccount) => {
@@ -22,15 +26,28 @@ const Balance = () => {
   };
 
   return (
-    <div className="pl-[280px]">
+    <div className="pl-[280px] flex flex-col">
       <div className="flex items-center gap-3">
-        <Link to={'/bankAccounts'} className="font-semibold text-3xl text-left hover:underline cursor-pointer">
+        <Link
+          to={'/bankAccounts'}
+          className="font-semibold text-3xl text-left hover:underline cursor-pointer"
+        >
           Balance
         </Link>
         <img src={bankIcon} alt="balance" className="w-5 mt-1" />
       </div>
-      <div className="flex flex-col gap-4">{renderBankAccounts()}</div>
-      <button className="opacity-75 underline text-sm hover:opacity-100 mt-4">Add bank account</button>
+      <div className="flex flex-col gap-4">
+        {bankAccounts && bankAccounts?.length > 0 ? (
+          renderBankAccounts()
+        ) : (
+          <Link
+            className="mt-4 underline opacity-85 hover:opacity-100 text-sm"
+            to={'/bankAccounts'}
+          >
+            Link bank account
+          </Link>
+        )}
+      </div>
     </div>
   );
 };

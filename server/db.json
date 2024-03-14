@@ -35,6 +35,55 @@
       "email": "asda@gmail.com",
       "password": "$2a$10$po.AVBv7SprbDF2gxSSaQOZIat2fhGlQgG.WbLGHLYWvRQP8gehmW",
       "id": 5
+    },
+    {
+      "firstName": "nito",
+      "lastName": "sh",
+      "email": "asdaf@gmail.com",
+      "password": "$2a$10$JodVdK.LJRCdjO/EcP/kjOTHa6S/SyyNfvaiy4s6YeFwP3N8k5i1a",
+      "id": 6
+    },
+    {
+      "firstName": "qwerty",
+      "lastName": "qwery",
+      "email": "qwerty@gmail.com",
+      "password": "$2a$10$s8O5de6S/29lHYOOr63ZNunlrlG6bOMIlsRUj6egHYPMtGtFJVdk.",
+      "id": 7
+    },
+    {
+      "firstName": "nzd",
+      "lastName": "nzd",
+      "email": "nzd@gmail.com",
+      "password": "$2a$10$Zxokge8guQlWwOZ0XAxjQO.QElQgIZAo7r7C0TLvZ7X.UUSi7V5.i",
+      "id": 8
+    },
+    {
+      "firstName": "polo",
+      "lastName": "polo",
+      "email": "polo@gmail.com",
+      "password": "$2a$10$QQOpZhL2tMncKgUR1sAIceWBw8inQ/Kt7.51QxxVarD/6/0BFV4yG",
+      "id": 9
+    },
+    {
+      "firstName": "coco",
+      "lastName": "coco",
+      "email": "coco@gmail.com",
+      "password": "$2a$10$4AKD0ZE/SZdDQEu2RzOWbex3ZjU4/dfHleBDgyZj6EIH0AGNsk2nC",
+      "id": 10
+    },
+    {
+      "firstName": "polog",
+      "lastName": "polog",
+      "email": "polog@gmail.com",
+      "password": "$2a$10$ufchf7/dZ2iJeuzEKN5wW.qTXVEynehKQcEMr28bBbpk3q07m24oy",
+      "id": 11
+    },
+    {
+      "firstName": "coco2",
+      "lastName": "coco2",
+      "email": "coco2@gmail.com",
+      "password": "$2a$10$Ykh9xbE0iessoHrP3ULyFeEOYx4yj7n.9bd/uwQpUNcq8mFRfv/Fi",
+      "id": 12
     }
   ],
   "categories": [
@@ -190,13 +239,6 @@
       "id": 2
     },
     {
-      "bankAccountId": 1,
-      "amount": 100,
-      "description": "Blerje 2",
-      "dateCreated": "2022-04-14T11:38:59.4989674",
-      "id": 3
-    },
-    {
       "bankAccountId": 3,
       "amount": 100,
       "description": "Blerje 2",
@@ -214,20 +256,68 @@
       "dateCreated": "2022-04-14T11:07:37.8915424"
     },
     {
-      "id": 3,
+      "id": 975,
       "name": "Euro Account",
       "balance": 500,
-      "userId": 5,
-      "isActive": true,
-      "dateCreated": "2022-04-14T11:07:37.8915424"
+      "userId": 7,
+      "isActive": false,
+      "dateCreated": "2024-03-14T14:47:31.566Z"
     },
     {
-      "name": "Savings Account",
-      "balance": 1000,
-      "userId": 456,
+      "id": 2,
+      "name": "Dollar Account",
+      "balance": 500,
+      "userId": 9,
+      "isActive": false,
+      "dateCreated": "2024-03-14T15:29:13.509Z"
+    },
+    {
+      "id": 576,
+      "name": "Pound Sterling Account",
+      "balance": 500,
+      "userId": 9,
+      "isActive": false,
+      "dateCreated": "2024-03-14T15:29:21.373Z"
+    },
+    {
+      "id": 355,
+      "name": "Pound Sterling Account",
+      "balance": 500,
+      "userId": 9,
+      "isActive": false,
+      "dateCreated": "2024-03-14T15:29:25.357Z"
+    },
+    {
+      "id": 65,
+      "name": "Euro Account",
+      "balance": 500,
+      "userId": 9,
+      "isActive": false,
+      "dateCreated": "2024-03-14T15:29:39.997Z"
+    },
+    {
+      "id": 171,
+      "name": "Euro Account",
+      "balance": 500,
+      "userId": 9,
+      "isActive": false,
+      "dateCreated": "2024-03-14T15:33:18.796Z"
+    },
+    {
+      "id": 967,
+      "name": "Euro Account",
+      "balance": 500,
+      "userId": 10,
+      "isActive": false,
+      "dateCreated": "2024-03-14T16:16:11.368Z"
+    },
+    {
+      "id": 503,
+      "name": "Euro Account",
+      "balance": 500,
+      "userId": 12,
       "isActive": true,
-      "dateCreated": "2023-07-01",
-      "id": 4
+      "dateCreated": "2024-03-14T16:21:50.206Z"
     }
   ]
 }
