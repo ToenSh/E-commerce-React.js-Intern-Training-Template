@@ -6,7 +6,6 @@ import useGetUser from '@/hooks/useGetUser';
 
 const Balance = () => {
   const user = useGetUser();
-  console.log(user);
   const { data: bankAccounts } = useGetBankAccountsQuery(user?.id?.toString());
 
   const renderBankAccounts = () => {

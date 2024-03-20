@@ -5,6 +5,8 @@ export async function changeUserPassword({
   userID,
   password,
 }: TChangePasswordRequest) {
-  const { data } = await axios.patch(`/users/${userID}`, password);
+  const { data } = await axios.patch(`/users/${userID}`, {
+    password: password,
+  });
   return data;
 }

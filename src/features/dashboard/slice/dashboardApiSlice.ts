@@ -1,16 +1,16 @@
-import { apiSlice } from "@/api/apiSlice";
-import { TCategory } from "../types";
+import { apiSlice } from '@/api/apiSlice';
+import { TCategory, TProduct } from '../types';
 
 export const dashboardApiSlice = apiSlice.injectEndpoints({
-    endpoints: builder => ({
-        getCategories: builder.query<TCategory[], void>({
-            query: () => '/categories'
-        }),
-        getOneCategory: builder.query<TCategory, string | void>({
-            query: (categoryID) => `/categories/${categoryID}`
-        })
-    })
-})
+  endpoints: (builder) => ({
+    getCategories: builder.query<TCategory[], void>({
+      query: () => '/categories',
+    }),
+    getOneCategory: builder.query<TCategory, string | void>({
+      query: (categoryID) => `/categories/${categoryID}`,
+    }),
+  }),
+});
 
-export const { useGetCategoriesQuery, useGetOneCategoryQuery } = dashboardApiSlice
-
+export const { useGetCategoriesQuery, useGetOneCategoryQuery } =
+  dashboardApiSlice;

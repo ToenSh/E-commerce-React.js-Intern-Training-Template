@@ -4,21 +4,25 @@ import { signup } from '../stores/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { useAddBankAccountMutation } from '@/features/BankAccounts';
 import useGetUser from '@/hooks/useGetUser';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const Register = () => {
   const navigate = useNavigate();
-  const { register, watch } = useForm();
+  const { register, watch, handleSubmit } = useForm();
   const dispatch = useAppDispatch();
-  const [addNewBankAcc] = useAddBankAccountMutation();
+  const [addNewBankAcc, { isLoading }] = useAddBankAccountMutation();
   const user = useGetUser();
   const firstName = watch('firstName');
   const lastName = watch('lastName');
   const email = watch('email');
   const password = watch('password');
 
-  const createAccount = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    dispatch(signup({ firstName, lastName, email, password }));
+  const createAccount = async () => {
+    try {
+      await dispatch(signup({ firstName, lastName, email, password }));
+    } catch (e) {
+      console.log(e);
+    }
     if (user?.id) {
       try {
         const newBankAcc = {
@@ -42,7 +46,7 @@ const Register = () => {
       <h1 className="font-semibold text-[40px] mb-12">Create account</h1>
       <form
         className="flex flex-col gap-6 items-center"
-        onSubmit={(e) => createAccount(e)}
+        onSubmit={handleSubmit(createAccount)}
       >
         <label>
           <input
@@ -84,9 +88,13 @@ const Register = () => {
             placeholder="Password"
           />
         </label>
-        <button className="bg-dark-green text-white font-medium w-28 py-2 mt-4 rounded hover:opacity-75">
-          Create
-        </button>
+        {isLoading ? (
+          <ClipLoader size={20} color="#123026" />
+        ) : (
+          <button className="bg-dark-green text-white font-medium w-28 py-2 mt-4 rounded hover:opacity-75">
+            Create
+          </button>
+        )}
       </form>
     </div>
   );

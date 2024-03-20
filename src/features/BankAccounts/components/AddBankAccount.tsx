@@ -36,7 +36,7 @@ const AddBankAccount = ({
           className="cursor-pointer hover:bg-gray-100"
           onClick={(e) => addBankAcc(e.currentTarget.innerHTML)}
         >
-          Pound Sterling
+          Pound
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

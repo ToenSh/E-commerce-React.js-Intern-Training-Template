@@ -3,6 +3,8 @@ import poundSign from '../assets/sterling-sign-solid.svg';
 import dollarSign from '../assets/dollar-sign-solid(1).svg';
 import deleteIcon from '../assets/trash-can-regular.svg';
 import { formatDate } from '@/utils/formatDate';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { useDeleteBankAccountMutation } from '../slice/bankAccountsApiSlice';
 
 interface BankAccountProps {
   id: number;
@@ -11,7 +13,7 @@ interface BankAccountProps {
   isActive: boolean;
   name: string;
   dateCreated: string;
-  deleteBankAcc: (bankAccId: number) => Promise<void>;
+  setBankAccActive: (bankAccId: number) => Promise<void>;
 }
 
 const BankAccount = ({
@@ -20,8 +22,21 @@ const BankAccount = ({
   isActive,
   name,
   dateCreated,
-  deleteBankAcc,
+  setBankAccActive,
 }: BankAccountProps) => {
+  const [deleteAccount, { isLoading: isDeleting }] =
+    useDeleteBankAccountMutation();
+
+  const deleteBankAcc = async (bankAccId: number) => {
+    if (bankAccId) {
+      try {
+        await deleteAccount(bankAccId).unwrap();
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  };
+
   return (
     <>
       <div className="flex items-center gap-4">
@@ -42,23 +57,35 @@ const BankAccount = ({
             <div className="text-xs opacity-90">{formatDate(dateCreated)}</div>
           </div>
           {isActive && (
-            <div className="ml-4 bg-green-700 text-white rounded-full px-2 text-sm">
+            <div className="ml-6 bg-green-700 text-white rounded-full px-2 text-sm">
               Active
             </div>
           )}
           <div className="ml-auto font-semibold text-sm">
-            {balance.toFixed(2)} USD
+            {balance.toFixed(2)}{' '}
+            {name.startsWith('Dollar')
+              ? 'USD'
+              : name.startsWith('Euro')
+                ? 'EUR'
+                : 'GBP'}
           </div>
         </div>
         <div className="flex items-center gap-4">
           {!isActive && (
-            <button className="bg-dark-green font-bold text-white rounded capitalize px-4 py-1 text-xs">
+            <button
+              className="bg-dark-green font-bold text-white rounded capitalize px-4 py-1 text-xs"
+              onClick={() => setBankAccActive(id)}
+            >
               set active
             </button>
           )}
-          <button onClick={() => deleteBankAcc(id)}>
-            <img src={deleteIcon} alt="delete account" className="w-4" />
-          </button>
+          {isDeleting ? (
+            <ClipLoader size={20} color="#123026" />
+          ) : (
+            <button onClick={() => deleteBankAcc(id)}>
+              <img src={deleteIcon} alt="delete account" className="w-4" />
+            </button>
+          )}
         </div>
       </div>
     </>

@@ -18,8 +18,18 @@ export const bankAccountsApiSlice = apiSlice.injectEndpoints({
     setActiveAccount: builder.mutation({
       query: (bankAccId: number) => ({
         url: `/bankAccounts/${bankAccId}`,
-        method: 'PUT',
+        method: 'PATCH',
+        body: { isActive: true },
       }),
+      invalidatesTags: ['bankAccounts'],
+    }),
+    deactivateCurrentActive: builder.mutation({
+      query: (bankAccId: number) => ({
+        url: `/bankAccounts/${bankAccId}`,
+        method: 'PATCH',
+        body: { isActive: false },
+      }),
+      invalidatesTags: ['bankAccounts'],
     }),
     deleteBankAccount: builder.mutation({
       query: (bankAccId: number) => ({
@@ -28,11 +38,17 @@ export const bankAccountsApiSlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ['bankAccounts'],
     }),
+    getActiveAccount: builder.query<TBankAccount[], string | undefined>({
+      query: (userId) => `/bankAccounts/?userId=${userId}&isActive=true`,
+    }),
   }),
 });
 
 export const {
   useGetBankAccountsQuery,
   useAddBankAccountMutation,
+  useDeactivateCurrentActiveMutation,
+  useSetActiveAccountMutation,
   useDeleteBankAccountMutation,
+  useGetActiveAccountQuery,
 } = bankAccountsApiSlice;

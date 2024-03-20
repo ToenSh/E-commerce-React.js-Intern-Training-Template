@@ -3,15 +3,19 @@ import AddBankAccount from '../components/AddBankAccount';
 import BankAccount from '../components/BankAccount';
 import {
   useAddBankAccountMutation,
-  useDeleteBankAccountMutation,
+  useDeactivateCurrentActiveMutation,
   useGetBankAccountsQuery,
+  useSetActiveAccountMutation,
 } from '../slice/bankAccountsApiSlice';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const BankAccounts = () => {
   const user = useGetUser();
-  const [addNewBankAcc] = useAddBankAccountMutation();
-  const [deleteAccount] = useDeleteBankAccountMutation();
+  const [addNewBankAcc, { isLoading: isAdding }] = useAddBankAccountMutation();
+  const [activateAccount] = useSetActiveAccountMutation();
+  const [deactivateCurrentActive] = useDeactivateCurrentActiveMutation();
   const { data: bankAccounts } = useGetBankAccountsQuery(user?.id?.toString());
+  const currActiveAcc = bankAccounts?.filter((account) => account.isActive);
 
   const renderBankAccounts = () => {
     return bankAccounts?.map((bankAccount) => {
@@ -24,7 +28,7 @@ const BankAccounts = () => {
           balance={bankAccount.balance}
           isActive={bankAccount.isActive}
           dateCreated={bankAccount.dateCreated}
-          deleteBankAcc={deleteBankAcc}
+          setBankAccActive={setBankAccActive}
         />
       );
     });
@@ -48,10 +52,17 @@ const BankAccounts = () => {
     }
   };
 
-  const deleteBankAcc = async (bankAccId: number) => {
-    if (bankAccId) {
+  const setBankAccActive = async (bankAccId: number) => {
+    if (bankAccId && currActiveAcc?.length) {
       try {
-        await deleteAccount(bankAccId).unwrap();
+        await deactivateCurrentActive(currActiveAcc[0].id).unwrap();
+        await activateAccount(bankAccId).unwrap();
+      } catch (e) {
+        console.log(e);
+      }
+    } else if (bankAccId && currActiveAcc?.length === 0) {
+      try {
+        await activateAccount(bankAccId).unwrap();
       } catch (e) {
         console.log(e);
       }
@@ -63,6 +74,9 @@ const BankAccounts = () => {
       <h1 className="font-semibold text-[40px]">Bank Accounts</h1>
       <div className="flex flex-col gap-6 my-6 max-w-lg">
         {renderBankAccounts()}
+        {isAdding && (
+          <ClipLoader size={30} color="#123026" className="mx-auto" />
+        )}
       </div>
       <AddBankAccount addBankAcc={addBankAcc} />
     </section>

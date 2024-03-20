@@ -5,17 +5,19 @@ import { login } from '../stores/userSlice';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { register, watch } = useForm();
+  const dispatch = useAppDispatch();
+  const { register, watch, handleSubmit } = useForm();
   const email = watch('email');
   const password = watch('password');
 
-  const dispatch = useAppDispatch();
-
-  const signin = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const signin = async () => {
     if (email && password) {
-      dispatch(login({ email, password }));
-      navigate('/profile');
+      try {
+        await dispatch(login({ email, password }));
+        navigate('/profile');
+      } catch (e) {
+        console.log(e);
+      }
     } else {
       console.log('email and password required');
     }
@@ -24,7 +26,7 @@ const Login = () => {
   return (
     <div className="text-dark-green max-w-7xl mx-auto flex flex-col items-center py-12">
       <h1 className="font-semibold text-[40px] mb-12">Login</h1>
-      <form className="flex flex-col gap-6" onSubmit={(e) => signin(e)}>
+      <form className="flex flex-col gap-6" onSubmit={handleSubmit(signin)}>
         <label>
           <input
             type="email"

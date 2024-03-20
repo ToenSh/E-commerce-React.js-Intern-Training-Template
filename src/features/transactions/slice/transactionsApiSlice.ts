@@ -1,13 +1,22 @@
-import { apiSlice } from "@/api/apiSlice";
-import { TransactionType } from "../types";
+import { apiSlice } from '@/api/apiSlice';
+import { TransactionType } from '../types';
 
 export const transactionsApiSlice = apiSlice.injectEndpoints({
-    endpoints: builder => ({
-        getTransactions: builder.query<TransactionType[], string>({
-            query: (bankAccountId) => `/transactions/?bankAccountId=${bankAccountId}`
-        }),
-    })
-})
+  endpoints: (builder) => ({
+    getTransactions: builder.query<TransactionType[], string | undefined>({
+      query: (bankAccountId) => `/transactions/?bankAccountId=${bankAccountId}`,
+      providesTags: ['transactions'],
+    }),
+    createTransaction: builder.mutation({
+      query: (transaction: TransactionType) => ({
+        url: '/transactions',
+        method: 'POST',
+        body: transaction,
+      }),
+      invalidatesTags: ['bankAccounts', 'transactions'],
+    }),
+  }),
+});
 
-export const { useGetTransactionsQuery } = transactionsApiSlice
-
+export const { useGetTransactionsQuery, useCreateTransactionMutation } =
+  transactionsApiSlice;

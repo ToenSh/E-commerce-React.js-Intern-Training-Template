@@ -5,6 +5,7 @@ import useGetCart from '@/hooks/useGetCart';
 
 const Checkout = () => {
   const cartItems = useGetCart();
+
   return cartItems.length > 0 ? (
     <section className="max-w-7xl mx-auto py-4 pb-16">
       <h1 className="font-semibold text-[40px]">Checkout</h1>
