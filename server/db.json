@@ -191,14 +191,6 @@
   "transactions": [],
   "bankAccounts": [
     {
-      "id": 463,
-      "name": "Euro Account",
-      "balance": 500,
-      "userId": 5,
-      "isActive": true,
-      "dateCreated": "2024-03-20T12:21:16.765Z"
-    },
-    {
       "id": 260,
       "name": "Euro Account",
       "balance": 500,
@@ -229,6 +221,22 @@
       "userId": 7,
       "isActive": false,
       "dateCreated": "2024-03-20T12:42:12.232Z"
+    },
+    {
+      "id": 476,
+      "name": "Dollar Account",
+      "balance": 500,
+      "userId": 5,
+      "isActive": true,
+      "dateCreated": "2024-03-22T16:00:11.638Z"
+    },
+    {
+      "id": 753,
+      "name": "Dollar Account",
+      "balance": 500,
+      "userId": 5,
+      "isActive": false,
+      "dateCreated": "2024-03-24T16:59:28.935Z"
     }
   ]
 }

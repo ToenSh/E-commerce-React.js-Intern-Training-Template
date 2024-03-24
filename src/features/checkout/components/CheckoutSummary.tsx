@@ -1,6 +1,5 @@
 import useGetCart from '@/hooks/useGetCart';
 import Item from './Item';
-import { TCartItem } from '@/features/cart';
 const CheckoutSummary = () => {
   const cartItems = useGetCart();
   const total = cartItems.reduce(

@@ -43,9 +43,11 @@ const OrderHistory = () => {
       <div className="max-w-[410px] flex flex-col gap-4 justify-between mt-4">
         {renderTransactions()}
       </div>
-      {/* <p className="tracking-wider opacity-80">
-        You haven't placed any orders yet.
-      </p> */}
+      {transactions?.length === 0 && (
+        <p className="tracking-wider opacity-80">
+          You haven't placed any orders yet.
+        </p>
+      )}
     </div>
   );
 };

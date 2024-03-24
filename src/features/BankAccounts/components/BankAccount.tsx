@@ -5,14 +5,9 @@ import deleteIcon from '../assets/trash-can-regular.svg';
 import { formatDate } from '@/utils/formatDate';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { useDeleteBankAccountMutation } from '../slice/bankAccountsApiSlice';
+import { TBankAccount } from '..';
 
-interface BankAccountProps {
-  id: number;
-  userId: number;
-  balance: number;
-  isActive: boolean;
-  name: string;
-  dateCreated: string;
+interface BankAccountProps extends TBankAccount {
   setBankAccActive: (bankAccId: number) => Promise<void>;
 }
 
