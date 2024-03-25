@@ -1,10 +1,13 @@
 import { useAppDispatch } from '@/app/hooks';
 import ProductDetails from '../components/ProductDetails';
 import { useGetOneCategoryQuery } from '@/features/dashboard/slice/dashboardApiSlice';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { addProduct } from '@/features/cart/slice/cartSlice';
 import { useToast } from '@/components/ui/use-toast';
+import useGetUser from '@/hooks/useGetUser';
 const Product = () => {
+  const navigate = useNavigate();
+  const user = useGetUser();
   const { toast } = useToast();
   const { categoryID, product: productID } = useParams();
   const { data: category } = useGetOneCategoryQuery(categoryID);
@@ -36,6 +39,24 @@ const Product = () => {
     }
   };
 
+  const buyNow = () => {
+    if (productData && user) {
+      dispatch(
+        addProduct({
+          id: productData.id,
+          categoryID: productData.categoryID,
+          name: productData.name,
+          price: productData.price,
+          image: productData.images[0],
+          quantity: 1,
+        })
+      );
+      navigate('/checkout');
+    } else {
+      navigate('/auth/login');
+    }
+  };
+
   return (
     <section
       className="max-w-7xl mx-auto pt-12 pb-20
@@ -53,7 +74,9 @@ const Product = () => {
           >
             Add to Cart
           </button>
-          <button className="bg-purple text-white font-bold text-sm py-3 rounded hover:opacity-75">Buy Now</button>
+          <button className="bg-purple text-white font-bold text-sm py-3 rounded hover:opacity-75" onClick={buyNow}>
+            Buy Now
+          </button>
         </div>
         <p className=" tracking-wider leading-7 opacity-80">{productData?.description}</p>
         <ProductDetails />

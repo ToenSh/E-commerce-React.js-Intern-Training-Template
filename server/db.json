@@ -33,7 +33,7 @@
       "firstName": "user",
       "lastName": "user",
       "email": "user@gmail.com",
-      "password": "$2a$10$aB30kMIrQl60.FwQ4QjcTOk7VkyUGUu1M713dzGMKyINHraKo67Ou",
+      "password": "$2a$10$RVbibDdCAe0zsL3WIuU3EuEVJ5jIj2lwT7swBj7YJoXAUecYIie/u",
       "id": 5
     },
     {
@@ -223,20 +223,12 @@
       "dateCreated": "2024-03-20T12:42:12.232Z"
     },
     {
-      "id": 476,
-      "name": "Dollar Account",
+      "id": 929,
+      "name": "Pound Account",
       "balance": 500,
       "userId": 5,
       "isActive": true,
-      "dateCreated": "2024-03-22T16:00:11.638Z"
-    },
-    {
-      "id": 753,
-      "name": "Dollar Account",
-      "balance": 500,
-      "userId": 5,
-      "isActive": false,
-      "dateCreated": "2024-03-24T16:59:28.935Z"
+      "dateCreated": "2024-03-25T10:53:04.797Z"
     }
   ]
 }

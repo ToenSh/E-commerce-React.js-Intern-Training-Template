@@ -35,7 +35,7 @@ export const userSlice = createAppSlice({
           state.value = action.payload.user;
           JwtManager.setAccessToken(action.payload.accessToken);
         },
-        rejected: (state, action) => {
+        rejected: (action) => {
           console.log(action);
         },
       }

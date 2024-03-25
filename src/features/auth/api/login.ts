@@ -9,7 +9,7 @@ export type TUserInfo = {
 export async function loginWithCredentials(
   credentials: TLoginRequest
 ): Promise<TUserInfo> {
-  try{
+  try {
     const { data } = await axios.post('login', credentials);
     return data;
   } catch (err) {
