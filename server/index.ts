@@ -9,6 +9,6 @@ const router = jsonServer.router(path.join(__dirname, "db.json"));
 server.use(middlewares)
 
 server.use(router)
-server.listen(3000, () => {
-  console.log("Server listening on port 3000")
+server.listen(3030, () => {
+  console.log("Server listening on port 3030")
 })

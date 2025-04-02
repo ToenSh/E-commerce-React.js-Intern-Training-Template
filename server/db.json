@@ -49,6 +49,13 @@
       "email": "user4@gmail.com",
       "password": "$2a$10$2G2Ch9rSJRlu70YI1Pz3BOpwZd4LPI7wGYbc.8IsKW4Bdey2NcffO",
       "id": 7
+    },
+    {
+      "firstName": "ts",
+      "lastName": "ts",
+      "email": "test11@gmail.com",
+      "password": "$2a$10$VBq7yBKktLdOAkzbpm6wS.qIo6sAJYufZK2gCodZoPvvL8nTZp.nK",
+      "id": 8
     }
   ],
   "categories": [
@@ -188,7 +195,21 @@
       ]
     }
   ],
-  "transactions": [],
+  "transactions": [
+    {
+      "id": 2862,
+      "bankAccountId": 929,
+      "amount": 253,
+      "products": [
+        {
+          "productId": 1002,
+          "categoryId": 1,
+          "quantity": 1
+        }
+      ],
+      "dateCreated": "2024-03-25T14:56:57.978Z"
+    }
+  ],
   "bankAccounts": [
     {
       "id": 260,
@@ -225,7 +246,7 @@
     {
       "id": 929,
       "name": "Pound Account",
-      "balance": 500,
+      "balance": 247,
       "userId": 5,
       "isActive": true,
       "dateCreated": "2024-03-25T10:53:04.797Z"
